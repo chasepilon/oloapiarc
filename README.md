@@ -14,7 +14,8 @@ POST https://jsonplaceholder.typicode.com/posts/{postId}/comments
 
 GET https://jsonplaceholder.typicode.com/comments?postId={postId}
 
-Acceptance Criteria: (in order of precedence)
+
+# Acceptance Criteria: (in order of precedence)
 
 The code base is well organized, DRY, easily readable and appropriately commented
 
