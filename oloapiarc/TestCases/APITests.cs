@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using oloapiarc.HelperFiles;
 using oloapiarc.DataModels;
@@ -37,6 +38,11 @@ namespace oloapiarc.TestCases
         [TestCategory("GET")]
         public async Task VerifyGenericGETPostsEndpointContract()
         {
+            BaseAPIModel baseModel = new BaseAPIModel();
+
+            baseModel.baseUrl = "https://jsonplaceholder.typicode.com/";
+            ApiHelper apiHandler = new ApiHelper(baseModel.baseUrl);
+
             //Set the endpoint
             baseModel.endpoint = "posts";
 
@@ -75,7 +81,12 @@ namespace oloapiarc.TestCases
         {
             //Set the endpoint
             baseModel.endpoint = "posts";
-            //baseModel.body = new JObject();
+            baseModel.body = new JObject();
+
+            //Set up the body
+            baseModel.body.Add("title", "test");
+            baseModel.body.Add("body", "This is how we do it");
+            baseModel.body.Add("userId", "11");
 
             //Run the endpoint, redirecting the call to use a GET
             var response = await apiHandler.RunEndpoint(baseModel, RequestType.POST);
@@ -86,11 +97,11 @@ namespace oloapiarc.TestCases
                 Assert.IsTrue(response != null);
 
                 //Parse the object into an array to allow checking data
-                JArray parsedRes = JArray.Parse(response);
+                JObject parsedRes = JObject.Parse(response);
 
                 //Contract validation
                 foreach (var c in baseModel.Contract)
-                    Assert.IsTrue(parsedRes[0].ToString().Contains(c));
+                    Assert.IsTrue(parsedRes.ToString().Contains(c));
             }
             catch (System.NullReferenceException err)
             {

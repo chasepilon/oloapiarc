@@ -11,7 +11,7 @@ namespace oloapiarc.DataModels
         public JObject body { get; set; }
         
 
-        public Dictionary<string, string> Authentication = new Dictionary<string, string>(); 
+        public Dictionary<string, string> Authentication; 
 
         public string GetFullUrl() { return baseUrl + endpoint; }
 
