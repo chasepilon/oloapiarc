@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using oloapiarc.HelperFiles;
+using oloapiarc.Helpers;
 using oloapiarc.DataModels;
 
 namespace oloapiarc.TestCases
@@ -24,7 +24,7 @@ namespace oloapiarc.TestCases
         {
             baseModel = new BaseAPIModel();
 
-            baseModel.baseUrl = "https://jsonplaceholder.typicode.com/";
+            baseModel.baseUrl = ConfigHelper.BaseUrls["JsonPlaceholder"];
             apiHandler = new ApiHelper(baseModel.baseUrl);
         }
 
@@ -38,13 +38,8 @@ namespace oloapiarc.TestCases
         [TestCategory("GET")]
         public async Task VerifyGenericGETPostsEndpointContract()
         {
-            BaseAPIModel baseModel = new BaseAPIModel();
-
-            baseModel.baseUrl = "https://jsonplaceholder.typicode.com/";
-            ApiHelper apiHandler = new ApiHelper(baseModel.baseUrl);
-
             //Set the endpoint
-            baseModel.endpoint = "posts";
+            baseModel.endpoint = ConfigHelper.BaseUrls["basePosts"];
 
             //Run the endpoint, redirecting the call to use a GET
             var response = await apiHandler.RunEndpoint(baseModel, RequestType.GET);
@@ -80,7 +75,7 @@ namespace oloapiarc.TestCases
         public async Task VerifyGenericPOSTEndpoint()
         {
             //Set the endpoint
-            baseModel.endpoint = "posts";
+            baseModel.endpoint = ConfigHelper.BaseUrls["basePosts"];
             baseModel.body = new JObject();
 
             //Set up the body

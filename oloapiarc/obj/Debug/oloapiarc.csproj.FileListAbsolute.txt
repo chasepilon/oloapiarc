@@ -20,3 +20,11 @@ C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Web.Http.xml
 C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Web.Http.WebHost.xml
 C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\Newtonsoft.Json.dll
 C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\Newtonsoft.Json.xml
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Security.AccessControl.dll
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Security.Permissions.dll
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Security.AccessControl.xml
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Security.Permissions.xml
+C:\Users\cpilon\git\oloapiarc\oloapiarc\bin\Debug\System.Security.Principal.Windows.xml

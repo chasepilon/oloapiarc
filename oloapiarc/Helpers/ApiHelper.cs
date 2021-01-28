@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 using oloapiarc.DataModels;
 
 
-namespace oloapiarc.HelperFiles
+namespace oloapiarc.Helpers
 {
     public class ApiHelper
     {
@@ -47,13 +47,13 @@ namespace oloapiarc.HelperFiles
                     response = await POST(apiModel);
                     break;
                 case RequestType.PUT:
-                    //response = await PUT(apiModel);
+                    response = await PUT(apiModel);
                     break;
                 case RequestType.PATCH:
-                    //response = await GPATCHET(apiModel);
+                    response = await PATCH(apiModel);
                     break;
                 case RequestType.DELETE:
-                    //response = await DELETE(apiModel);
+                    response = await DELETE(apiModel);
                     break;
             }
 
@@ -61,7 +61,7 @@ namespace oloapiarc.HelperFiles
         }
 
         //POST
-        public async Task<string> POST(BaseAPIModel apiModel)
+        private async Task<string> POST(BaseAPIModel apiModel)
         {
             try
             {
@@ -128,7 +128,7 @@ namespace oloapiarc.HelperFiles
         }
 
         //PUT
-        public async Task<string> PUT(BaseAPIModel apiModel)
+        private async Task<string> PUT(BaseAPIModel apiModel)
         {
             try
             {
@@ -158,7 +158,7 @@ namespace oloapiarc.HelperFiles
         }
 
         //PATCH
-        public async Task<string> PATCH(BaseAPIModel apiModel)
+        private async Task<string> PATCH(BaseAPIModel apiModel)
         {
             try
             {
@@ -193,7 +193,7 @@ namespace oloapiarc.HelperFiles
 
 
         //DELETE
-        public async Task<string> DELETE(BaseAPIModel apiModel)
+        private async Task<string> DELETE(BaseAPIModel apiModel)
         {
             try
             {
