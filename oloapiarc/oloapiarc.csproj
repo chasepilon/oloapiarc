@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataModels\APIModels.cs" />
+    <Compile Include="DataModels\TestData.cs" />
     <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\ConfigHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
